@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Javascript/Week 2 J/Day 3 local/style.css">
+    <title>Eastern Holistic Health - Local Storage</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🌿 DrSunny.AI Tool 1 🌿</h1>
+            <button class="toggle-theme" id="theme-toggle">🌙</button>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2 class="section-title">Infuse Energy</h2>
+                <div class="storage-form">
+                    <input type="text" id="keyInput" placeholder="Enter Mantra Key (e.g., 'Peace')">
+                    <input type="text" id="valueInput" placeholder="Enter Healing Energy Value (e.g., 'Calm')">
+                    <button onclick="saveToLocalStorage()">Save</button>
+                    <button onclick="clearLocalStorage()">Clear</button>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <h2 class="section-title">Seek Wisdom</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button onclick="searchLocalStorage()">Search</button>
+                </div>
+                <div id="searchResult" class="search-result"></div>
+            </section>
+        </main>
+
+        <section class="stored-data">
+            <h2 class="section-title">Stored Wisdom</h2>
+            <div id="storedData" class="holistic-data">
+                <!-- Data from local storage will be displayed here -->
+            </div>
+        </section>
+    </div>
+    <script src="/Javascript/Week 2 J/Day 3 local/script.js"></script>
+</body>
+
+</html>
