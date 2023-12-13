@@ -57,4 +57,17 @@ function searchLocalStorage() {
     if (value) {
         resultArea.innerHTML = `<div class="search-found">${searchKey}: ${value}</div>`;
     } else {
-        resultArea
+        resultArea.innerHTML = `<div class="search-not-found">Scroll not found in the archives.</div>`;
+    }
+}
+
+function showMessage(message, isSuccess) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    messageElement.className = isSuccess ? 'success-message' : 'error-message';
+    document.body.appendChild(messageElement);
+    setTimeout(() => {
+        messageElement.style.opacity = '0';
+        setTimeout(() => messageElement.remove(), 500);
+    }, 3000);
+}
