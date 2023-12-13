@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Ensures proper rendering and touch zooming for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- Correct the path to be relative -->
     <link rel="stylesheet" href="style.css">
     <title>Eastern Holistic Health - Local Storage</title>
 </head>
@@ -36,16 +34,21 @@
                 </div>
                 <div id="searchResult" class="search-result"></div>
             </section>
+
+            <section class="instructions">
+                <h2>How to Use</h2>
+                <p>1. To store wisdom, enter a key and value and click 'Save'.</p>
+                <p>2. To search stored wisdom, enter a key and click 'Search'.</p>
+                <p>3. To clear stored wisdom, click 'Clear'.</p>
+                <p>4. Use the moon button to toggle theme colors.</p>
+            </section>
         </main>
 
         <section class="stored-data">
             <h2 class="section-title">Stored Wisdom</h2>
-            <div id="storedData" class="holistic-data">
-                <!-- Data from local storage will be displayed here -->
-            </div>
+            <div id="storedData" class="holistic-data"></div>
         </section>
     </div>
-    <!-- Correct the path to be relative -->
     <script src="script.js"></script>
 </body>
 
