@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
 }
 
 /* Body styling */
@@ -10,6 +11,15 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #1a1a1a;
     color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* RGB Animation */
+@keyframes rgb-animation {
+    0% { border-color: red; }
+    33% { border-color: green; }
+    66% { border-color: blue; }
+    100% { border-color: red; }
 }
 
 /* Header styling */
@@ -17,14 +27,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #2494E4;
-    /* Cartier Blue */
+    background-color: #2494E4; /* Cartier Blue */
     padding: 20px;
+    animation: rgb-animation 5s linear infinite; /* RGB border animation */
 }
 
 .title {
     font-size: 24px;
     color: #fff;
+    text-transform: uppercase; /* Make the title stand out */
+    background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient text */
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 5s ease-in-out infinite; /* Animated gradient text */
+}
+
+/* Gradient text animation */
+@keyframes shine {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
 }
 
 .toggle-theme {
@@ -33,13 +54,12 @@ body {
     cursor: pointer;
     font-size: 24px;
     color: #fff;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .toggle-theme:hover {
-    color: #99DFB2;
-    /* Medical Green */
-    transform: scale(1.1);
+    color: #99DFB2; /* Medical Green */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
 /* Container styling */
@@ -48,112 +68,25 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #292929;
-    border: 5px solid #2494E4;
-    /* Cartier Blue */
+    border: 5px solid #2494E4; /* Cartier Blue */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s, transform 0.3s;
-}
-
-.container:hover {
-    border-color: #2494E4;
-    /* Red (for contrast) */
-    transform: scale(1.01);
+    animation: rgb-animation 5s linear infinite; /* RGB border animation */
 }
 
 /* Section styling */
 .section-title {
-    color: #2494E4;
-    /* Cartier Blue */
+    color: #2494E4; /* Cartier Blue */
     margin-bottom: 10px;
     font-size: 20px;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 10px #2494E4;
-        /* Cartier Blue */
-    }
-
-    100% {
-        text-shadow: 0 0 15px #2494E4, 0 0 20px #ff0000;
-        /* Cartier Blue and Red */
-    }
-}
-
-/* Form styling */
-.storage-form,
-.search-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #444;
-    color: #fff;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    background-color: #333;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #2494E4;
-    /* Medical Green */
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background-color: #ff0000;
-    /* Red (for contrast) */
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
-}
-
-/* Search result styling */
-.search-result {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Stored data styling */
-.holistic-data {
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-/* Dark mode styles */
-.dark-mode {
-    background-color: #000;
-    color: #fff;
+    animation: glow 2s infinite alternate; /* Text glow effect */
 }
 
 /* Add more styles as needed for animations, transitions, and other design elements. */
 
 /* Example dark mode toggler */
 .dark-mode .toggle-theme {
-    color: #99DFB2;
-    /* Medical Green */
+    color: #99DFB2; /* Medical Green */
 }
 
 /* Media queries for responsiveness */
@@ -169,5 +102,9 @@ button:hover {
     .storage-form,
     .search-bar {
         width: 100%;
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size for smaller screens */
     }
 }
