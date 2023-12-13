@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Javascript/Week 2 J/Day 3 local/style.css">
+    <!-- Ensures proper rendering and touch zooming for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Correct the path to be relative -->
+    <link rel="stylesheet" href="style.css">
     <title>Eastern Holistic Health - Local Storage</title>
 </head>
 
@@ -19,18 +21,18 @@
             <section class="form-section">
                 <h2 class="section-title">Infuse Energy</h2>
                 <div class="storage-form">
-                    <input type="text" id="keyInput" placeholder="Enter Mantra Key (e.g., 'Peace')">
-                    <input type="text" id="valueInput" placeholder="Enter Healing Energy Value (e.g., 'Calm')">
-                    <button onclick="saveToLocalStorage()">Save</button>
-                    <button onclick="clearLocalStorage()">Clear</button>
+                    <input type="text" id="keyInput" placeholder="Enter Mantra Key (e.g., 'Peace')" autocomplete="off">
+                    <input type="text" id="valueInput" placeholder="Enter Healing Energy Value (e.g., 'Calm')" autocomplete="off">
+                    <button id="saveButton">Save</button>
+                    <button id="clearButton">Clear</button>
                 </div>
             </section>
 
             <section class="search-section">
                 <h2 class="section-title">Seek Wisdom</h2>
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <button onclick="searchLocalStorage()">Search</button>
+                    <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+                    <button id="searchButton">Search</button>
                 </div>
                 <div id="searchResult" class="search-result"></div>
             </section>
@@ -43,7 +45,8 @@
             </div>
         </section>
     </div>
-    <script src="/Javascript/Week 2 J/Day 3 local/script.js"></script>
+    <!-- Correct the path to be relative -->
+    <script src="script.js"></script>
 </body>
 
 </html>
